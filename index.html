@@ -3,7 +3,8 @@
     <title>Angular 2 QuickStart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
-
+    <link href="node_modules/ag-grid/dist/styles/ag-grid.css" rel="stylesheet" />
+    <link href="node_modules/ag-grid/dist/styles/theme-fresh.css" rel="stylesheet" />
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
@@ -14,6 +15,8 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <!-- for UI Grid -->
+
 
     <!-- 2. Configure SystemJS -->
     <script>
@@ -22,7 +25,17 @@
                 app: {
                     format: 'register',
                     defaultExtension: 'js'
+                },
+                'ag-grid-ng2':{
+                    defaultExtension: "js"
+                },
+                'ag-grid':{
+                    defaultExtension: "js"
                 }
+            },
+            map:{
+                'ag-grid-ng2': 'node_modules/ag-grid-ng2',
+                'ag-grid': 'node_modules/ag-grid'
             }
         });
         System.import('app/boot')

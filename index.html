@@ -3,6 +3,7 @@
     <title>Angular 2 QuickStart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
+    <!-- might not be using these styles yet -->
     <link href="node_modules/ag-grid/dist/styles/ag-grid.css" rel="stylesheet" />
     <link href="node_modules/ag-grid/dist/styles/theme-fresh.css" rel="stylesheet" />
     <!-- 1. Load libraries -->
@@ -15,9 +16,8 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-    <!-- for UI Grid -->
-
-
+    <!--ag-grid-->
+    <script src="node_modules/ag-grid/dist/ag-grid.js"></script>
     <!-- 2. Configure SystemJS -->
     <script>
         System.config({
@@ -26,17 +26,18 @@
                     format: 'register',
                     defaultExtension: 'js'
                 },
-                'ag-grid-ng2':{
+                'ag-grid-ng2': {
                     defaultExtension: "js"
                 },
-                'ag-grid':{
+                'ag-grid': {
                     defaultExtension: "js"
                 }
             },
-            map:{
+            map: {
                 'ag-grid-ng2': 'node_modules/ag-grid-ng2',
                 'ag-grid': 'node_modules/ag-grid'
             }
+
         });
         System.import('app/boot')
                 .then(null, console.error.bind(console));

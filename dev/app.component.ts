@@ -1,12 +1,12 @@
 import {Component} from 'angular2/core';
-import {ProjectsListComponent} from "./projects-list.component";
+import {CoreComponent} from "./core.component";
 
 @Component({
     selector: 'my-app',
     template: `
-<h1>My First Angular 2 App</h1>
-<projects-list></projects-list>
+<h1>Design Layout</h1>
+<core></core>
 `,
-    directives:[ProjectsListComponent]
+    directives:[CoreComponent]
 })
 export class AppComponent { }

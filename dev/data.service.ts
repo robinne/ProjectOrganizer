@@ -1,13 +1,13 @@
 import {Injectable} from "angular2/core";
 import {Http, Headers} from "angular2/http";
-import 'rxjs/Rx';
+import 'rxjs/Rx'
 
 @Injectable()
 export class DataService {
 
     constructor(private _http:Http) {
     }
-
+    // this works. posted to firebase
     postData(data:any) {
         // need URL, the data
         const body = JSON.stringify(data); //. javascript object ("data") to json, string
@@ -20,4 +20,8 @@ export class DataService {
             .map(response=>response.json()); // map response. data stream to json
 
     }
+    
+    
+    
+    
 }

@@ -6,6 +6,10 @@
     <!-- might not be using these styles yet -->
     <link href="node_modules/ag-grid/dist/styles/ag-grid.css" rel="stylesheet" />
     <link href="node_modules/ag-grid/dist/styles/theme-fresh.css" rel="stylesheet" />
+
+    <!-- foundation for apps -->
+    <link href="node_modules/foundation-apps/dist/css/foundation-apps.min.css" />
+
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
@@ -19,6 +23,12 @@
     <script src="node_modules/angular2/bundles/http.js"></script>
     <!--ag-grid-->
     <script src="node_modules/ag-grid/dist/ag-grid.js"></script>
+    <!-- pouchdb probably remove-->
+    <script src="node_modules/pouchdb/dist/pouchdb.js"></script>
+    <!-- foundation for apps -->
+    <script src="node_modules/foundation-apps/dist/js/foundation-apps.min.css"></script>
+
+
     <!-- 2. Configure SystemJS -->
     <script>
         System.config({
@@ -37,6 +47,7 @@
             map: {
                 'ag-grid-ng2': 'node_modules/ag-grid-ng2',
                 'ag-grid': 'node_modules/ag-grid'
+
             }
 
         });

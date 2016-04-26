@@ -1,9 +1,13 @@
 'use strict';
 
 const electron = require('electron');
+// const express = require('express');
+// const ex = express();
 // added by robin
 // Module to control application life.
 const app = electron.app;
+
+var server = require("./server");
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow;
 
@@ -29,6 +33,11 @@ function createWindow () {
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
         mainWindow = null;
+
+        // added by robin to get rest api running. not sure if correct location
+        // ex.listen(3000, function() {
+        //     console.log('App listening');
+        // });
     });
 }
 
@@ -52,3 +61,7 @@ app.on('activate', function () {
         createWindow();
     }
 });
+
+
+
+

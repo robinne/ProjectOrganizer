@@ -7,19 +7,18 @@ import {DataService} from "./data.service";
 @Component({
     selector: 'add-project',
     template: `
-<div>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
 <div class="input">
 <label for="name">Name</label>
-<input type="text" id="name" #name>
+<input type="text" id="name" ngControl="name" required>
 </div>
 <div class="input">
-<label for="notes">Notes</label>
-<input type="text" id="notes" #notes>
+<label for="summary">Summary</label>
+<input type="text" id="summary" ngControl="summary" required>
 </div>
-<button (click)="onPost(name.value, notes.value)">Post Data</button>
-<button (click)="onGetPosts()">Get All Posts</button>
-<p>Response: {{response}}</p>
-</div>
+<button type="submit">Submit</button>
+<!--<button (click)="onPost(name.value, summary.value)">Post Data</button>-->
+</form>
 `,
     providers: [DataService]
 })
@@ -29,19 +28,20 @@ export class AddProjectComponent {
 
     constructor(private _dataService:DataService){}
 
-    onPost(name:string, notes: string) {
-        // create javascript object with the data
-        const data = {
-            name: name,
-            notes:notes
-        };
-        this._dataService.postData(data)
-            .subscribe(
-                data => this.response = JSON.stringify(data),
-                error=> console.log(error)
-            ); //get stuff back from observable
+    onSubmit(form){
+        console.log(form);
     }
+    // onPost(name:string, summary: string) {
+    //     // create javascript object with the data
+    //     const data = {
+    //         name: name,
+    //         summary:summary
+    //     };
+    //     this._dataService.addProject(data)
+    //         .subscribe(
+    //             data => this.response = JSON.stringify(data),
+    //             error=> console.log(error)
+    //         ); //get stuff back from observable
+    // }
 
-    onGetPosts() {
-    }
 }

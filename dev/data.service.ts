@@ -20,6 +20,18 @@ export class DataService {
             .map(response=>response.json()); // map response. data stream to json
     }
 
+
+    getAllProjects(){
+        return (this._http.get("http://localhost:8000/get-all-projects").map(response=>response.json()));
+    }
+
+    addProject(proj:any){
+        // how do I add using rest api?
+        return (this._http.get("http://localhost:8000/add-project").map(response=>response.json()));
+    }
+
+
+
     getFromExpress(): any{
         // console.log("get From Express routine called:...");
         // console.log(this._http.get("http://localhost:8000/some-data-api").map((res:Response) => res.json()));

@@ -21,8 +21,16 @@ export class ProjectsListComponent {
     rowData = [{id: 1, name: "robin"}, {id: 2, name: "greg"}];
 
 
+    GetProjects()
+    {
+        this.myDS.getAllProjects().subscribe(
+            data =>{
+                console.log(data);
+            }
+        )
+    }
+
     IGetData() {
-        // this.mystring = this.myDS.getFromExpress()
         this.myDS.getFromExpress().subscribe(
             data =>{
                 console.log(data);

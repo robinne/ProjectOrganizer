@@ -4,7 +4,7 @@ import {CoreComponent} from "./core.component";
 @Component({
     selector: 'my-app',
     template: `
-<core></core>
+<corefoo></corefoo>
 `,
     directives:[CoreComponent]
 })

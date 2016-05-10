@@ -22,10 +22,10 @@ function createWindow () {
 
     // and load the index.html of the app.
     mainWindow.loadURL('file://' + __dirname + '/index.html');
-
     // Open the DevTools.
     mainWindow.webContents.openDevTools();
-
+    console.log("foobar");
+    console.log(require.resolve('electron'));
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {

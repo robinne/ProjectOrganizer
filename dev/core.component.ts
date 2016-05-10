@@ -5,7 +5,7 @@ import {TasksComponent} from "./tasks.component";
 
 
 @Component({
-    selector: 'core',
+    selector: 'corefoo',
     templateUrl: 'templates/core.tpl.html',
     directives: [ProjectsListComponent, QueueComponent, TasksComponent]
 })

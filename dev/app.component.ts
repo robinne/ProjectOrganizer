@@ -1,5 +1,6 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {CoreComponent} from "./core.component";
+
 
 @Component({
     selector: 'my-app',
@@ -8,4 +9,6 @@ import {CoreComponent} from "./core.component";
 `,
     directives:[CoreComponent]
 })
-export class AppComponent { }
+export class AppComponent {
+
+}

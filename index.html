@@ -5,80 +5,72 @@
     <link rel="stylesheet" href="styles.css">
     <!-- might not be using these styles yet -->
     <link href="node_modules/ag-grid/dist/styles/ag-grid.css" rel="stylesheet"/>
+
     <link href="node_modules/ag-grid/dist/styles/theme-fresh.css" rel="stylesheet"/>
 
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
 
-
-
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
-    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
 
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-    <script src="node_modules/angular2/bundles/http.js"></script>
+
+    <!--<script src="node_modules/systemjs/dist/system-polyfills.js"></script>-->
+
+    <!--<script src="node_modules/rxjs/bundles/Rx.js"></script>-->
     <!--ag-grid-->
     <script src="node_modules/ag-grid/dist/ag-grid.js"></script>
 
     <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
     <script>
-
-        System.config({
-            packages: {
-                app: {
-                    format: 'register',
-                    defaultExtension: 'js'
-                },
-                'ag-grid-ng2': {
-                    defaultExtension: "js"
-                },
-
-                'ag-grid': {
-                    defaultExtension: "js"
-                },
-                '@angular/core':{
-                    defaultExtension:"js",
-                    main: 'index.js'
-                },
-                '@angular/common':{
-                    defaultExtension:"js",
-                    main: 'index.js'
-                },
-                '@angular2-material/core': {
-                    format: 'cjs',
-                    defaultExtension: 'js',
-                    main: 'core.js'
-                },
-                '@angular2-material/checkbox': {
-                    format: 'cjs',
-                    defaultExtension: 'js',
-                    main: 'checkbox.js'
-                }
-            },
-            map: {
-                'ag-grid-ng2': 'node_modules/ag-grid-ng2',
-                'ag-grid': 'node_modules/ag-grid',
-                '@angular2-material/checkbox':'node_modules/@angular2-material/checkbox',
-                '@angular/core':'node_modules/@angular/core',
-                '@angular/common':'node_modules/@angular/common'
-
-
-            },
-            "scripts": {
-                "postinstall": "npm run rebuild-sqlite3",
-                "rebuild-sqlite3": "cd node_modules/sqlite3 &amp;&amp; npm run prepublish &amp;&amp; node-gyp configure --module_name=node_sqlite3 --module_path=../lib/binding/electron-v0.37-win32-x64 &amp;&amp; node-gyp rebuild --target=0.37.8 --arch=x64 --target_platform=darwin --dist-url=https://atom.io/download/atom-shell --module_name=node_sqlite3 --module_path=../lib/binding/electron-v0.37-win32-x64"
-            }
-
-        });
-        System.import('app/boot')
-                .then(null, console.error.bind(console));
+        System.import('app/boot').catch(function(err){ console.error(err);  });
     </script>
+    <!--<script>-->
+
+        <!--System.config({-->
+            <!--packages: {-->
+                <!--app: {-->
+                    <!--format: 'register',-->
+                    <!--defaultExtension: 'js'-->
+                <!--},-->
+                <!--'ag-grid-ng2': {-->
+                    <!--defaultExtension: "js"-->
+                <!--},-->
+
+                <!--'ag-grid': {-->
+                    <!--defaultExtension: "js"-->
+                <!--},-->
+                <!--'@angular/core':{-->
+                    <!--defaultExtension:"js",-->
+                    <!--main: 'index.js'-->
+                <!--},-->
+                <!--'@angular/common':{-->
+                    <!--defaultExtension:"js",-->
+                    <!--main: 'index.js'-->
+                <!--}-->
+            <!--},-->
+            <!--map: {-->
+                <!--'ag-grid-ng2': 'node_modules/ag-grid-ng2',-->
+                <!--'ag-grid': 'node_modules/ag-grid',-->
+                <!--'@angular/core':'node_modules/@angular/core',-->
+                <!--'@angular/common':'node_modules/@angular/common'-->
+
+
+            <!--},-->
+            <!--"scripts": {-->
+                <!--"postinstall": "npm run rebuild-sqlite3",-->
+                <!--"rebuild-sqlite3": "cd node_modules/sqlite3 &amp;&amp; npm run prepublish &amp;&amp; node-gyp configure &#45;&#45;module_name=node_sqlite3 &#45;&#45;module_path=../lib/binding/electron-v0.37-win32-x64 &amp;&amp; node-gyp rebuild &#45;&#45;target=0.37.8 &#45;&#45;arch=x64 &#45;&#45;target_platform=darwin &#45;&#45;dist-url=https://atom.io/download/atom-shell &#45;&#45;module_name=node_sqlite3 &#45;&#45;module_path=../lib/binding/electron-v0.37-win32-x64"-->
+            <!--}-->
+
+        <!--});-->
+        <!--System.import('app/boot')-->
+                <!--.then(null, console.error.bind(console));-->
+    <!--</script>-->
 </head>
 
 <!-- 3. Display the application -->

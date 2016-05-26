@@ -20,7 +20,8 @@ app.use(express.static('public'));
 // app.use(require('connect-livereload')());
 
 app.get('/get-all-projects', function(request, response){
-    console.log("foobar");
+    console.log("/get-all-projects");
+    response.send(projects);
     // var db = new sqlite3.Database('database/MynewDatabase.db');
     // db.all("SELECT id, name from projects",[], function(err, rows){response.send(rows);console.log(rows)});
     // db.close();
@@ -51,7 +52,9 @@ app.get('/post-data', function (request, response) {
 
 
 });
-
+app.get('/', function (req, res) {
+    res.send('Hello World!');
+});
 
 app.listen(8000, function () {
     console.log('Express server started on port 8000');

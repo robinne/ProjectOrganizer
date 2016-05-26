@@ -2,12 +2,14 @@ import {Component} from '@angular/core';
 import {AgGridNg2} from 'ag-grid-ng2/main';
 import {AddProjectComponent} from './add-project.component';
 import {DataService} from './data.service';
+import {MdCheckbox} from '@angular2-material/checkbox';
+
 
 
 @Component({
     selector: 'projects-list',
     templateUrl: 'templates/projects-list.tpl.html',
-    directives: [AgGridNg2, AddProjectComponent],
+    directives: [AgGridNg2, AddProjectComponent, MdCheckbox],
     providers: [DataService]
 })
 export class ProjectsListComponent {

@@ -5,14 +5,20 @@
     <link rel="stylesheet" href="styles.css">
     <!-- might not be using these styles yet -->
     <link href="node_modules/ag-grid/dist/styles/ag-grid.css" rel="stylesheet"/>
-
     <link href="node_modules/ag-grid/dist/styles/theme-fresh.css" rel="stylesheet"/>
-
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <!--<link href="node_modules/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
 
     <!-- 1. Load libraries -->
+
     <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');
+    </script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
 
     <script src="node_modules/zone.js/dist/zone.js"></script>
@@ -29,7 +35,12 @@
     <script src="systemjs.config.js"></script>
     <script>
         System.import('app/boot').catch(function(err){ console.error(err);  });
+        //window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');
+
     </script>
+    <!--<script src="node_modules/bootstrap-table/dist/bootstrap-table.min.js"></script>-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+    <script src="http:////cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/locale/bootstrap-table-zh-CN.min.js"></script>
     <!--<script>-->
 
         <!--System.config({-->
@@ -75,9 +86,32 @@
 
 <!-- 3. Display the application -->
 <body>
-Node: <script>document.write(process.versions.node)</script><br>
-Electron: <script>document.write(process.versions.electron)</script><br>
-Modules: <script>document.write(process.versions.modules)</script> <br>
+<!--Node: <script>document.write(process.versions.node)</script><br>-->
+<!--Electron: <script>document.write(process.versions.electron)</script><br>-->
+<!--Modules: <script>document.write(process.versions.modules)</script> <br>-->
 <my-app>Loading...</my-app>
+<h1>Bootstrap Table</h1>
+<table data-toggle="table">
+    <thead>
+    <tr>
+        <th data-sortable="true">Item ID</th>
+        <th>Item Name</th>
+        <th>Item Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>Item 1</td>
+        <td>$1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Item 2</td>
+        <td>$2</td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>

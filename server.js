@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var sql = require('sql.js');
+//evar sql = require('sql.js');
 //var db = new sql.Database();
 //var sqlite3 = require('sqlite3').verbose();
 
@@ -20,7 +20,10 @@ app.use(express.static('public'));
 // app.use(require('connect-livereload')());
 
 app.get('/get-all-projects', function(request, response){
-    response.send(projects);
+    console.log("foobar");
+    // var db = new sqlite3.Database('database/MynewDatabase.db');
+    // db.all("SELECT id, name from projects",[], function(err, rows){response.send(rows);console.log(rows)});
+    // db.close();
 });
 
 app.post('/add-project', function(request, response){
@@ -29,12 +32,6 @@ app.post('/add-project', function(request, response){
    // var proj3 =
 
 });
-
-
-
-
-
-
 
 app.get('/some-data-api', function (request, response) {
     response.send([{id: 1, name: "robin database"}, {id: 2, name: "greg database"}]);

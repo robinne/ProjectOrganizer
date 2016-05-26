@@ -7,7 +7,8 @@
         'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
         '@angular':                   'node_modules/@angular',
         'ag-grid-ng2':         'node_modules/ag-grid-ng2',
-        'ag-grid':  'node_modules/ag-grid'
+        'ag-grid':  'node_modules/ag-grid',
+        '@angular2-material/checkbox': 'node_modules/@angular2-material/checkbox'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
@@ -17,6 +18,16 @@
         'angular2-in-memory-web-api': { defaultExtension: 'js' },
         'ag-grid-ng2'   :{defaultExtension:'js'},
         'ag-grid'   :{defaultExtension:'js'},
+        '@angular2-material/core': {
+            format: 'cjs',
+            defaultExtension: 'js',
+            main: 'core.js'
+        },
+        '@angular2-material/checkbox': {
+            format: 'cjs',
+            defaultExtension: 'js',
+            main: 'checkbox.js'
+        },
     };
 
     var packageNames = [
@@ -40,7 +51,7 @@
     var config = {
         map: map,
         packages: packages
-    }
+    };
 
     // filterSystemConfig - index.html's chance to modify config before we register it.
     if (global.filterSystemConfig) { global.filterSystemConfig(config); }

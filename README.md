@@ -21,11 +21,16 @@ before trying the postinstall below, will try electron's solution:
         Error with node-gyp rebuild. Try to install .net framework 2 sdk from microsoft.com. Didn't help.
         updated node-gyp:
             cd to where node.exe is and go to node_modules\npm and run: >npm install -g node-gyp@latest. Did not work.
-        Install visual studio 2015 express for desktop. vcbuild is at C:\Program Files (x86)\Microsoft Visual Studio 8\VC\vcpackages. Added that to Path, still did not work.
+        Install visual studio 2015 express for desktop. vcbuild is at C:\Program Files (x86)\Microsoft Visual Studio 8\VC\vcpackages. 
+        Added that to Path, still did not work.
         Ran npm install -g --msvs_version=2015 node-gyp rebuild. THIS WORKED. IT MUST HAVE NEEDED 2015 SETTING
         Re-run entire electron-rebuild...it ran, will check to see what it did later.
-        Reran again using >npm install --msvs_version=2015 electron-rebuild. Seems to have done "something". Then ran in .bin directory> electron-rebuild. Failed.
-        Try>set GYP_MSVS_VERSION=2015. then run electron-rebuild in node modules bin dir. Nothing errored...and, the sqlite3 binding with electron path is there!!!
+        Reran again using >npm install --msvs_version=2015 electron-rebuild. Seems to have done "something". Then ran in .bin 
+        directory> electron-rebuild. Failed.
+        Try>set GYP_MSVS_VERSION=2015. then run electron-rebuild in node modules bin dir.
+        >.\node_modules\.bin\electron-rebuild.cmd 
+        Nothing errored...and, the sqlite3 
+        binding with electron path is there!!!
         It worked.
         For next time, see if this sticks (file remains) or if I need to run the "set" each time followed by rebuild.
 
